@@ -1,23 +1,36 @@
+//html DOM elements links
+var $newGameButton = document.getElementById("newGameButton");
+var $currentWordDashes = document.getElementById("currentWordDashes");
+var $lettersGuessed = document.getElementById("lettersGuessed");
+var $guessesRemaining = document.getElementById("guessesRemaining");
+var $wins = document.getElementById("wins");
 
-
-//Score
+var mummyWords = ["archaeology", "egypt", "rick", "evelyn", "imohtep", "mummy", "curse"];
 var wins = 0;
 var guessesRemaining = 12;
-var lettersUsed = [];
-var answerArray = [];
+var gameRunning = false;
+var pickedMummyWord = "";
+var pickedMummyWordDashesArray = [];
+var lettersGuessedArray = [];
+var incorrectLettersGuessed = [];
 
-//word choices 
-var jonesWords = ["archaeology", "indiana", "whip", "marion", "ark", "adventure", "snakes"];
+//reset function
+var resetGame = function(){
+    gameRunning = true;
+    guessesRemaining = 12;
+    lettersGuessedArray = [];
+    incorrectLettersGuessed = [];
+    pickedMummyWordDashesArray = [];
 
-var gameWord = jonesWords[Math.floor(Math.random() * jonesWords.length)]; 
+var gameWord = mummyWords[Math.floor(Math.random() * mummyWords.length)]; 
+}
+
+
+
+
 
 // reset function will start guessesremain over and empty out arrays to be refilled
-var resetGame = function(){
-    guessesRemaining = 12;
-    lettersUsed = [];
-    answerArray = [];
 
-    gameWord = jonesWords[Math.floor(Math.random() * jonesWords.length)]; //will set new word and array dashes
 
     for(var i = 0; i < gameWord.length; i++){
         answerArray.push("_");
@@ -38,17 +51,17 @@ var updateDashes = function(){
    
 }
 //updates win #
-var updateWins = function(){
-    document.getElementById("wins").innerText = wins;
-}
+// var updateWins = function(){
+//     document.getElementById("wins").innerText = wins;
+// }
 //updates guesses remaining as decreases
-var updateGuessesRemaining = function(){
-    document.getElementById("guessesRemaining").innerText = guessesRemaining;
-}
+// var updateGuessesRemaining = function(){
+//     document.getElementById("guessesRemaining").innerText = guessesRemaining;
+// }
 //updates letters guessed by user
-var updateLettersGuessed = function(){
-    document.getElementById("lettersGuessed").innerText = lettersUsed;
-}
+// var updateLettersGuessed = function(){
+//     document.getElementById("lettersGuessed").innerText = lettersUsed;
+// }
 
 
 //collects keys pressed

@@ -4,37 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Indiana Jones Word Guess</title>
+    <title>The Mummy Word Guess Game</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
-    <div class="container">
+
+    <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-
+                <img src="#" alt="">
             </div>
+        </div>
+        
+        <div class="row text-center">
+            <div class="col-md-12">
+                <button id="newGameButton">
+                    Press to Start New Game
+                </button>
+            </div>
+            
         </div>
 
         <div class="row">
-            <div class="col-md-4">
-
+            <div class="col-12 col-md-3">
+                
             </div>
             
-            <div class="col-md-4">
+            <div class="col-12 col-md-6 text-center">
                 <h3>Press Any Key To Get Started!</h3>
-                <p>Current Word</p>
-                <p id="answerArrayDashes"></p>
-                <p>Wins</p>
+                <p>Current Word
+                    <br/>
+                    <span id="currentWordDashes">_ _ _ _ _</span>
+                </p>
+                <p>Letters Already Guessed
+                    <br/>
+                    <span id="lettersGuessed"></span>
+                </p>
+                <p>Wins: <span id="wins">0</span></p>
                 <p id="wins"></p>
-                <p>Number of Guesses Remaining</p>
-                <p id="guessesRemaining"></p>
-                <p>Letters Already Guessed</p>
-                <p id="LettersGuessed"></p>
+                <p>Number of Guesses Remaining: <span id="guessesRemaining">12</span>
+                </p>
             </div>
             
-            <div class="col-md-4">
+            <div class="col-12 col-md-3">
             
             </div>
         </div>
