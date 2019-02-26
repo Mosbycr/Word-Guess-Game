@@ -5,6 +5,7 @@ var $lettersGuessed = document.getElementById("lettersGuessed");
 var $guessesRemaining = document.getElementById("guessesRemaining");
 var $wins = document.getElementById("wins");
 
+//variables for js code
 var mummyWords = ["archaeology", "egypt", "rick", "evelyn", "imohtep", "mummy", "curse"];
 var wins = 0;
 var guessesRemaining = 12;
@@ -22,7 +23,19 @@ var resetGame = function(){
     incorrectLettersGuessed = [];
     pickedMummyWordDashesArray = [];
 
-var gameWord = mummyWords[Math.floor(Math.random() * mummyWords.length)]; 
+    pickedMummyWord = mummyWords[Math.floor(Math.random() * mummyWords.length)]; 
+
+    for (var i = 0; i < pickedMummyWord.length; i++) {
+        if (pickedMummyWord[i] === " ") {
+            pickedMummyWordDashesArray.push("");
+        } else {
+            pickedMummyWordDashesArray.push("_");
+        }
+    }
+
+    $guessesRemaining.textContent = guessesRemaining;
+    $currentWordDashes.textContent = pickedMummyWordDashesArray;
+    $lettersGuessed.textContent = incorrectLettersGuessed;
 }
 
 
@@ -32,14 +45,7 @@ var gameWord = mummyWords[Math.floor(Math.random() * mummyWords.length)];
 // reset function will start guessesremain over and empty out arrays to be refilled
 
 
-    for(var i = 0; i < gameWord.length; i++){
-        answerArray.push("_");
-    }
-
-    updateDashes();
-    updateGuessesRemaining();
-    updateLettersGuessed();
-}
+    
 
 //updates Display when letters are pressed 
 var updateDashes = function(){
