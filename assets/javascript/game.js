@@ -6,7 +6,7 @@ var guessesLeft = document.getElementById("guessesRemaining");
 var userWins = document.getElementById("wins");
 
 //variables for js code
-var mummyWords = ["archaeology", "egypt", "rick", "evelyn", "imohtep", "mummy", "curse"];
+var mummyWords = ["Archaeology", "Egypt", "Rick", "Evelyn", "Imohtep", "Mummy", "Curse"];
 var wins = 0;
 var guessesLeft = 12;
 var gameRunning = false;
@@ -18,7 +18,7 @@ var incorrectLettersGuessed = [];
 //reset function
 var resetGame = function(){
     gameRunning = true;
-    guessesRemaining = 12;
+    guessesRemaining = 10;
     lettersGuessedArray = [];
     incorrectLettersGuessed = [];
     pickedMummyWordDashesArray = [];
@@ -46,7 +46,7 @@ var userLetterPressed = function(letter){
 
         //check to see if letter is in picked word
         for (var i=0; i < pickedMummyWord.length; i++){
-            if(pickedMummyWord[i] === letter) {
+            if(pickedMummyWord[i].toLowerCase() === letter.toLowerCase()) {
                 pickedMummyWordDashesArray[i] = pickedMummyWord[i];     
             }
         }
@@ -64,12 +64,7 @@ var userLetterPressed = function(letter){
 //collects keys pressed
 document.onkeyup = function(event) {
     // guessesRemaining--;
-    var userGuess = event.key;
-    console.log(userGuess);
-   
-    //changes any uppercase keys to lowercase so matches words
-    userLetterPressed = userGuess.toLowerCase();
-    console.log(userLetterPressed);
+    userLetterPressed(event.key);
 }
 
 
