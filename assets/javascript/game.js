@@ -72,7 +72,27 @@ var checkLetter = function(letter){
         guessesLeft--;
         guessNumber.textContent = guessesLeft;
     }
+    checkLose();
 }
+
+var checkLose = function(){
+    if (guessesLeft === 0){
+        gameRunning = false; // maybe add alert here to say lost???
+        currentWord.textContent = pickedMummyWord;
+        resetGame();
+    }
+    checkWin();    
+}
+
+var checkWin = function(){
+    if (pickedMummyWord.toLowerCase() === pickedMummyWordDashesArray.join("").toLowerCase()) {
+        wins++;
+        userWins.textContent = wins;
+        gameRunning = false;
+        resetGame();
+    }
+}
+
 
 //collects keys pressed
 document.onkeyup = function(event) { // can add specific keys so only letters
