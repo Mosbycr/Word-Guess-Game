@@ -2,13 +2,13 @@
 var newGameButton = document.getElementById("newGameButton");
 var currentWord = document.getElementById("currentWordDashes");
 var lettersGuess = document.getElementById("lettersGuessed");
-var guessesLeft = document.getElementById("guessesRemaining");
+var guessNumber = document.getElementById("guessesRemaining");
 var userWins = document.getElementById("wins");
 
 //variables for js code
 var mummyWords = ["Archaeology", "Egypt", "Rick", "Evelyn", "Imohtep", "Mummy", "Curse"];
 var wins = 0;
-var guessesLeft = 12;
+var guessesLeft = 10;
 var gameRunning = false;
 var pickedMummyWord = []; //changed to array from ""
 var pickedMummyWordDashesArray = [];
@@ -18,7 +18,7 @@ var incorrectLettersGuessed = [];
 //reset function
 var resetGame = function(){
     gameRunning = true;
-    guessesRemaining = 10;
+    guessesLeft = 10;
     lettersGuessedArray = [];
     incorrectLettersGuessed = [];
     pickedMummyWordDashesArray = [];
@@ -30,11 +30,12 @@ var resetGame = function(){
             pickedMummyWordDashesArray.push("_ ");//changed to one line of code for dash and space
     }
 
-    guessesLeft.textContent = guessesRemaining;
+    guessNumber.textContent = guessesLeft;
     currentWord.textContent = pickedMummyWordDashesArray.join("");
     lettersGuess.textContent = incorrectLettersGuessed;
 }
 
+//start new game
 newGameButton.addEventListener("click", resetGame);
 
 //letter guess function
@@ -47,24 +48,37 @@ var userLetterPressed = function(letter){
         //check to see if letter is in picked word
         for (var i=0; i < pickedMummyWord.length; i++){
             if(pickedMummyWord[i].toLowerCase() === letter.toLowerCase()) {
-                pickedMummyWordDashesArray[i] = pickedMummyWord[i];     
-            }
-        }
-
-        currentWord.textContent = pickedMummyWordDashesArray.join("");
+                pickedMummyWordDashesArray[i] = pickedMummyWord[i];        
+            }   
+        }  
+        
+        currentWord.textContent = pickedMummyWordDashesArray.join("");  
+        checkLetter(letter);
     } 
-        else {
-            if (gameRunning === false){
-             alert("The game isn't running, press the New Game Button");
-            } else {
-             alert("You have already guessed that letter, please try another one!");
-            }
+    
+        // else {
+        //     if (gameRunning === false){
+        //      alert("The game isn't running, press the New Game Button");
+        //     } else {
+        //      alert("You have already guessed that letter, please try another one!");
+        //     }
+    // }
+}
+
+var checkLetter = function(letter){
+    if (pickedMummyWordDashesArray.indexOf(letter.toLowerCase()) === -1) { // need to work more is returning 5 of the letter
+        incorrectLettersGuessed.push(letter);
+        lettersGuess.textContent = incorrectLettersGuessed.join("");
+        guessesLeft--;
+        guessNumber.textContent = guessesLeft;
     }
 }
+
 //collects keys pressed
-document.onkeyup = function(event) {
-    // guessesRemaining--;
+document.onkeyup = function(event) { // can add specific keys so only letters
+              // if(even.keyCode >= 65 && event.keyCode <= 90)
     userLetterPressed(event.key);
+    
 }
 
 
