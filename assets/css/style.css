@@ -1,7 +1,15 @@
 body {
-    background-color:#FFE27B;
+    background-color: rgba(235, 185, 110, 0.829);
 }
 #jumbo {
     background-image: url("../../assets/images/pyramids.jpg");
+    background-color:  rgba(248, 228, 197, 0.966);
     background-size: 100% 100%;
+    background-blend-mode: multiply;
+}
+
+#newGameButton {
+    color: white;
+    background-color: #ccb44b;
+    border: 5px solid white;
 }
