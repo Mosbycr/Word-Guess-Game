@@ -1,0 +1,7 @@
+body {
+    background-color:#FFE27B;
+}
+#jumbo {
+    background-image: url("../../assets/images/pyramids.jpg");
+    background-size: 100% 100%;
+}

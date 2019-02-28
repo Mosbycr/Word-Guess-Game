@@ -6,7 +6,7 @@ var guessNumber = document.getElementById("guessesRemaining");
 var userWins = document.getElementById("wins");
 
 //variables for js code
-var mummyWords = ["Archaeology", "Egypt", "Rick", "Evelyn", "Imohtep", "Mummy", "Curse"];
+var mummyWords = ["Archaeology", "Egypt", "Tomb", "Sarcophagus", "Afterlife", "Mummy", "Curse"];
 var wins = 0;
 var guessesLeft = 10;
 var gameRunning = false;
