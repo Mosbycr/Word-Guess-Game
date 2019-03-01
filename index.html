@@ -8,38 +8,38 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Aladin" rel="stylesheet">
 </head>
 <body>
 
     
-    <div class="jumbotron jumbotron-fluid text-center text-white" id="jumbo">
-        <h1 class="display-4">The Egyptian Mummy</h1>
-        <p class="lead">Word Guess Game</p>
-        <hr class="my-4">
-        <button id="newGameButton">Press Here To Start A New Game</button>
+    <div class="jumbotron jumbotron-fluid text-center text-white font mb-0" id="jumbo">
+        <h1 class="display-4" id="title">The Egyptian Mummy</h1>
+        <p class="lead" id="secondTitle">Word Guess Game</p>
+        <button class="py-4 px-4" id="newGameButton">Press Here To Start A New Game</button>
     </div>
     
-    <div class="container-fluid">
+    <div class="container-fluid background">
 
         <div class="row">
             <div class="col-12 col-md-3">
                 
             </div>
             
-            <div class="col-12 col-md-6 text-center text-white" id="scoreBorder">
-                <h3>Press Any Key To Get Started!</h3>
-                <hr>
-                <p>Current Word
+            <div class="col-12 col-md-6 text-center text-white font my-5" id="scoreBorder">
+                <h4 class="pt-4 pb-3">Press Any Key To Get Started!</h4>
+                <hr id="scoreHr">
+                <p class="fontSize">Current Word
                     <br/>
                     <span id="currentWordDashes">_ _ _ _ _</span>
                 </p>
-                <p>Letters Already Guessed:
+                <p class="fontSize">Letters Already Guessed:
                     <br/>
                     <span id="lettersGuessed"></span>
                 </p>
-                <p>Wins: <span id="wins">0</span></p>
+                <p class="fontSize">Wins: <span id="wins">0</span></p>
                 <p id="wins"></p>
-                <p>Number of Guesses Remaining: <span id="guessesRemaining">10</span>
+                <p class="fontSize">Number of Guesses Remaining: <span id="guessesRemaining">10</span>
                 </p>
             </div>
             

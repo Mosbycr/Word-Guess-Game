@@ -1,20 +1,44 @@
-body {
-    background-color: rgba(235, 185, 110, 0.829);
+.background {
+    background-color:rgba(214, 157, 71, 0.692);
 }
 #jumbo {
     background-image: url("../../assets/images/pyramids.jpg");
-    background-color:  rgba(248, 228, 197, 0.966);
+    background-color:  rgba(214, 157, 71, 0.692);
     background-size: 100% 100%;
-    background-blend-mode: multiply;
+    
 }
 
 #newGameButton {
     color: white;
     background-color: #ccb44b;
     border: 5px solid white;
+    font-size: 25px;
+    outline: none;
+    box-shadow: none;
 }
 
 #scoreBorder {
     border: 3px solid white;
+    background-color: #ccb44b;
 }
 
+#scoreHr {
+    border-width: 3px;
+    border-color: white;
+}
+
+.font {
+    font-family: 'Aladin', cursive;
+}
+
+#title {
+    font-size: 90px;
+}
+
+#secondTitle {
+    font-size: 50px;
+}
+
+.fontSize {
+    font-size: 20px;
+}
