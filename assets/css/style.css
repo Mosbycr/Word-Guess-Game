@@ -13,3 +13,8 @@ body {
     background-color: #ccb44b;
     border: 5px solid white;
 }
+
+#scoreBorder {
+    border: 3px solid white;
+}
+
