@@ -9,8 +9,8 @@ body {
 #jumbo {
     background-image: url("../../assets/images/pyramids.jpg");
     background-color:  rgba(214, 157, 71, 0.692);
-    background-size: 100% 100%;
-    
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 #newGameButton {
