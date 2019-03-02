@@ -13,6 +13,10 @@ var pickedMummyWordDashesArray = [];
 var lettersGuessedArray = [];
 var incorrectLettersGuessed = [];
 
+function play_single_sound() {
+    document.getElementById('audiotag1').play();
+}
+
 var resetGame = function(){
     gameRunning = true;
     wins = 0;
@@ -49,9 +53,6 @@ var resetGameWin = function () {
     guessNumber.textContent = guessesLeft;
     currentWord.textContent = pickedMummyWordDashesArray.join("");
     lettersGuess.textContent = incorrectLettersGuessed;
-
-    var snd = new Sound("../audio/magical.mp3");
-    snd.play();
 }
 
 newGameButton.addEventListener("click", resetGame);
@@ -94,6 +95,7 @@ var checkLose = function(){
 
 var checkWin = function(){
     if (pickedMummyWord.toLowerCase() === pickedMummyWordDashesArray.join("").toLowerCase()) {
+        play_single_sound();
         wins++;
         userWins.textContent = wins;
         gameRunning = false;
