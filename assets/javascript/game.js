@@ -77,7 +77,7 @@ var userLetterPressed = function(letter){
 var checkLetter = function(letter){
     if (pickedMummyWordDashesArray.indexOf(letter.toLowerCase()) === -1) { 
         incorrectLettersGuessed.push(letter);
-        lettersGuess.textContent = incorrectLettersGuessed.join("");
+        lettersGuess.textContent = incorrectLettersGuessed.join(" ");
         guessesLeft--;
         guessNumber.textContent = guessesLeft;
     }
