@@ -9,3 +9,6 @@ An array of words provides the current hidden word. Each word is presented in ra
 2. Then using the keyboard the user can press any letter key to guess the letters in the current word.
 3. The user has 10 guesses to complete the hidden word before losing and a new game begins.
 4. If the user completes the hidden word, they win and the score increases to 1. A new word is generated and the game continues.
+
+# Demo
+![2019-03-06 2](https://user-images.githubusercontent.com/46547100/53903294-553a0c00-4011-11e9-941e-3b6b4b7fac11.png)
